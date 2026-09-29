@@ -231,10 +231,6 @@
       <h1 class="mt-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md">
         A Family of Buttons
       </h1>
-      <p class="mt-2 max-w-3xl text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-        Soccer tests structural boundaries with high-energy impact. DIY patches damage and restores stability.
-        A successful project needs both forces in harmony.
-      </p>
     </header>
 
     <main class="mx-auto mt-4 sm:mt-6 flex w-full max-w-6xl flex-1 flex-col gap-4 md:gap-6">
@@ -275,23 +271,47 @@
         </div>
 
         <div id="ball" class="ball absolute bottom-6 sm:bottom-8 left-1/2 z-20 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24" aria-hidden="true">
+          <!-- Classic truncated-icosahedron soccer ball; same box/shadow as before so kick physics stay unchanged. -->
           <svg viewBox="0 0 100 100" class="h-full w-full drop-shadow-xl">
             <defs>
               <radialGradient id="ballShade" cx="32%" cy="28%" r="72%">
                 <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="62%" stop-color="#e5e7eb" />
-                <stop offset="100%" stop-color="#9ca3af" />
+                <stop offset="38%" stop-color="#f4f4f5" />
+                <stop offset="78%" stop-color="#d4d4d8" />
+                <stop offset="100%" stop-color="#71717a" />
               </radialGradient>
-              <clipPath id="ballClip"><circle cx="50" cy="50" r="47" /></clipPath>
+              <radialGradient id="pentShade" cx="38%" cy="32%" r="70%">
+                <stop offset="0%" stop-color="#3f3f46" />
+                <stop offset="55%" stop-color="#18181b" />
+                <stop offset="100%" stop-color="#09090b" />
+              </radialGradient>
+              <radialGradient id="ballSpec" cx="30%" cy="24%" r="38%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+              </radialGradient>
+              <clipPath id="ballClip"><circle cx="50" cy="50" r="47.2" /></clipPath>
             </defs>
-            <circle cx="50" cy="50" r="48" fill="url(#ballShade)" stroke="#111827" stroke-width="2.4" />
-            <g clip-path="url(#ballClip)" fill="none" stroke="#111827" stroke-width="2.2" stroke-linejoin="round">
-              <polygon points="50,30 60.5,37.6 56.5,50 43.5,50 39.5,37.6" fill="#111827" stroke="none" />
-              <path d="M39.5 37.6 L26 28 L18 42 L30 55 M60.5 37.6 L74 28 L82 42 L70 55" />
-              <path d="M43.5 50 L33 68 L50 78 L67 68 L56.5 50" />
-              <path d="M18 42 C12 58 20 74 33 68 M82 42 C88 58 80 74 67 68" />
-              <path d="M26 28 C38 12 62 12 74 28" />
+            <circle cx="50" cy="50" r="48" fill="url(#ballShade)" stroke="#111827" stroke-width="1.6" />
+            <g clip-path="url(#ballClip)" stroke="#111827" stroke-width="1.15" stroke-linejoin="round" stroke-linecap="round">
+              <polygon fill="#fafafa" points="40.72,88.33 59.28,88.33 68.56,75.55 59.28,62.78 40.72,62.78 31.44,75.55" />
+              <polygon fill="#fafafa" points="40.72,62.78 34.98,45.12 19.96,40.24 10.68,53.02 16.42,70.67 31.44,75.55" />
+              <polygon fill="#fafafa" points="89.32,53.02 80.04,40.24 65.02,45.12 59.28,62.78 68.56,75.55 83.58,70.67" />
+              <polygon fill="#fafafa" points="80.04,24.45 65.02,13.54 50.00,18.42 50.00,34.21 65.02,45.12 80.04,40.24" />
+              <polygon fill="#fafafa" points="19.96,24.45 19.96,40.24 34.98,45.12 50.00,34.21 50.00,18.42 34.98,13.54" />
+              <polygon fill="#f4f4f5" points="31.44,91.34 40.72,94.36 59.28,94.36 68.56,91.34 59.28,88.33 40.72,88.33" />
+              <polygon fill="#f4f4f5" points="4.95,54.88 10.68,72.53 16.42,80.43 16.42,70.67 10.68,53.02 4.95,45.12" />
+              <polygon fill="#f4f4f5" points="89.32,53.02 83.58,70.67 83.58,80.43 89.32,72.53 95.05,54.88 95.05,45.12" />
+              <polygon fill="#f4f4f5" points="16.42,19.57 10.68,27.47 19.96,24.45 34.98,13.54 40.72,5.64 31.44,8.66" />
+              <polygon fill="#f4f4f5" points="83.58,19.57 68.56,8.66 59.28,5.64 65.02,13.54 80.04,24.45 89.32,27.47" />
+              <polygon fill="url(#pentShade)" points="40.72,62.78 59.28,62.78 65.02,45.12 50.00,34.21 34.98,45.12" />
+              <polygon fill="url(#pentShade)" points="59.28,5.64 40.72,5.64 34.98,13.54 50.00,18.42 65.02,13.54" />
+              <polygon fill="url(#pentShade)" points="89.32,53.02 95.05,45.12 89.32,27.47 80.04,24.45 80.04,40.24" />
+              <polygon fill="url(#pentShade)" points="19.96,24.45 10.68,27.47 4.95,45.12 10.68,53.02 19.96,40.24" />
+              <polygon fill="url(#pentShade)" points="83.58,80.43 83.58,70.67 68.56,75.55 59.28,88.33 68.56,91.34" />
+              <polygon fill="url(#pentShade)" points="31.44,91.34 40.72,88.33 31.44,75.55 16.42,70.67 16.42,80.43" />
             </g>
+            <circle cx="50" cy="50" r="47.2" fill="url(#ballSpec)" />
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#111827" stroke-width="1.6" />
           </svg>
         </div>
       </section>
@@ -303,31 +323,25 @@
         feedback (hover is not required for the interaction to feel complete).
       -->
       <section class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 pb-2">
-        <div class="flex flex-col gap-1.5">
-          <p class="px-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-emerald-950 sm:text-white/90">Member 1 · Soccer</p>
-          <button id="kickBtn" type="button"
-                  class="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-emerald-600 px-4 py-3 text-base sm:text-lg font-bold text-white shadow-lg ring-1 ring-emerald-300/40 transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 disabled:active:scale-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-white">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
-                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
-                <polygon points="12,8.2 14.6,10.1 13.6,13.2 10.4,13.2 9.4,10.1" />
-              </svg>
-            </span>
-            Kick Ball
-          </button>
-        </div>
-        <div class="flex flex-col gap-1.5">
-          <p class="px-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-950 sm:text-right">Member 2 · DIY projects</p>
-          <button id="repairBtn" type="button"
-                  class="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-amber-700 px-4 py-3 text-base sm:text-lg font-bold text-white shadow-lg ring-1 ring-amber-300/40 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-white">
-            <span id="wrenchIcon" class="wrench inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
-                <path d="M13.2 2.4l8.4 8.4-2.4 1-1.8-1.8-7.1 7.1 1.8 1.8-1 2.4-8.4-8.4 2.4-1 1.8 1.8 7.1-7.1-1.8-1.8 1-2.4z" />
-              </svg>
-            </span>
-            Repair Wall
-          </button>
-        </div>
+        <button id="kickBtn" type="button"
+                class="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-emerald-600 px-4 py-3 text-base sm:text-lg font-bold text-white shadow-lg ring-1 ring-emerald-300/40 transition active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 disabled:active:scale-100 focus:outline-none focus-visible:ring-4 focus-visible:ring-white">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <polygon points="12,8.2 14.6,10.1 13.6,13.2 10.4,13.2 9.4,10.1" />
+            </svg>
+          </span>
+          Kick Ball
+        </button>
+        <button id="repairBtn" type="button"
+                class="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-amber-700 px-4 py-3 text-base sm:text-lg font-bold text-white shadow-lg ring-1 ring-amber-300/40 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-white">
+          <span id="wrenchIcon" class="wrench inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+              <path d="M13.2 2.4l8.4 8.4-2.4 1-1.8-1.8-7.1 7.1 1.8 1.8-1 2.4-8.4-8.4 2.4-1 1.8 1.8 7.1-7.1-1.8-1.8 1-2.4z" />
+            </svg>
+          </span>
+          Repair Wall
+        </button>
       </section>
     </main>
   </div>
